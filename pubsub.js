@@ -5,7 +5,7 @@ var host = require('url').parse(url);
 function newClient() {
 	var client = redis.createClient(host.port, host.hostname);
 	if (host.auth) {
-		client.auth(host.auth.split(:)[1]);
+		client.auth(host.auth.split(":")[1]);
 	}
 	return client;
 }
