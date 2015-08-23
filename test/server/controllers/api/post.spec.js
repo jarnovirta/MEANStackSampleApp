@@ -36,7 +36,6 @@ describe('controllers.api.posts', function() {
 				done(err);
 			});
 		});
-		console.log("TOKEN: " + token);
 		beforeEach(function(done) {
 			api.post('/api/posts')
 				.send({body: 'this is my new post'})

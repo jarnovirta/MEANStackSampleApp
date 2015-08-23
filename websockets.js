@@ -7,10 +7,8 @@ exports.connect = function (server) {
 	wss.on('connection', function(socket) {
 		clients.push(socket);
 		exports.broadcast('new client joined');
-		console.log('Add websocket client');
 		socket.on('close', function () {
 			_.remove(clients, socket);
-			console.log('Remove websocket client');
 		})
 	})
 

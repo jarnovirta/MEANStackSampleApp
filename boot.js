@@ -2,8 +2,11 @@
 var numCpus = require('os').cpus().length
 var cluster = require('cluster')
 
-cluster.setupMaster({exec: __dirname + '/server.js'})
-
+cluster.setupMaster({exec: __dirname + '/server.js'});
+var numCpus = require('os').cpus().length;
+for (var i = 0; i < numCpus; i++) {
+  cluster.fork();
+}
 // workerIds returns the node cluster index for each worker
 function workerIds() { return Object.keys(cluster.workers) }
 

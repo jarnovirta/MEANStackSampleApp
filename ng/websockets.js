@@ -13,7 +13,7 @@ angular.module('app')
 			var url = websocketHost();
 			connection = new WebSocket(websocketHost());
 			connection.onmessage = function (e) {
-				console.log("Websocket.js received message: " + e);
+				
 				var payload = JSON.parse(e.data);
 				$rootScope.$broadcast('ws:' + payload.topic, payload.data);
 			};

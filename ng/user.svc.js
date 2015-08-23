@@ -7,7 +7,6 @@ angular.module('app')
 			});
 		};
 		svc.login = function(username, password) {
-			console.log('login function');
 			return $http.post('/api/sessions', {
 				username: username, password: password
 			}).then(function(val) {
